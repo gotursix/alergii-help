@@ -7,7 +7,7 @@
 <body>
     
     
-    <div class="container">
+    <div class="container up center">
   	
         <form  class="login" action="forgotPassword.php" method="post">
         

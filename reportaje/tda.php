@@ -69,7 +69,7 @@
     
      echo " 
              <div class='caption'>
-             <h1>".$row['d_title']."</h1>
+             <h1 class='center'>".$row['d_title']."</h1>
             <p>".$row['d_text']."</p>
             <hr>
            

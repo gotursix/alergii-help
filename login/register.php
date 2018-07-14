@@ -34,28 +34,13 @@
 	                     <span  data-placeholder="Parola"></span>
 					</div>
                             <h4> Alegeți-vă o poză de profil 	</h4>
-                            
-                            
-                            
-            
-               
-               
-               
-               <input  name="file" class="register-img" type="file" name="myImage" accept="image/*" />
-
-                
+                        <input class="register-img" name="file" type="image" accept="image/*">
             
  <?php                     
     if (isset($_POST["register"]))
-  {
-      
-      
-    $check = getimagesize($_FILES["file"]["tmp_name"]);
-    if($check !== false) 
+    
     {
-        
-        
-                       
+               
     	$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
 
 		$firstName = $connection->real_escape_string($_POST["firstName"]);  		
@@ -82,51 +67,16 @@ for (i = 0; i < close.length; i++) {
     }
 }
 </script>";
-
-
-        
-        
-       
-        $uploadOk = 1;
-        
-
-       move_uploaded_file($_FILES['file']['tmp_name'],"../images/".$_FILES['file']['name']);
+    	else
+    	{
+    	 move_uploaded_file($_FILES['file']['tmp_name'],"../images/".$_FILES['file']['name']);
        
          $connection = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
          $q = mysqli_query($connection,"UPDATE users SET image = '".$_FILES['file']['name']."' WHERE username LIKE '%$firstName%' ");
     	
     		header("Location: login.php");
 			exit();}	
-        
-        else {
-            
-            
-          	echo "<div class='alert'>
-              <span class='closebtn'>&times;</span>  
-               Fisierul nu este o imagine
-              </div>
-              
-              <script>
-var close = document.getElementsByClassName('closebtn');
-var i;
-
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function(){
-        var div = this.parentElement;
-        div.style.opacity = '0';
-        setTimeout(function(){ div.style.display = 'none'; }, 600);
-    }
-}
-</script>";
-      
-    }
-        
-        
-    
-    
-    
-    
- 	  }               
+	}	                 
 ?> 
 
             <input type="submit" name="register" value="Inregistrare" required />    

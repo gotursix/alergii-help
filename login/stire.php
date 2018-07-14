@@ -68,9 +68,9 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
            include '../bara_de_navigație/bara_navigatie.php';
 ?>
       
-  	<div class="container">
+  	<div class="container up">
   		<div class="row">
-  				<h1>Adaugă o știre</h1>
+  				<h1 class="center">Adaugă o știre</h1>
   				
 				<form role="form" method="post" action="">
 					

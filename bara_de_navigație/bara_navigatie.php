@@ -4,7 +4,7 @@
     
             <div class="navbar-header">
       
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myInverseNavbar2" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> 
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myInverseNavbar2" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span><span class="icon-bar"></span> <span class="icon-bar"></span> 
                 </button>
       
                 <a href="#"><img class="dlike" src="https://alergii-help.xyz/images/avatar.png" ></a> 

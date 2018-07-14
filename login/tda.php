@@ -69,10 +69,10 @@ if (!$errName && !$errEmail && !$errMessage && !$errHuman) {
            include '../bara_de_navigație/bara_navigatie.php';
 ?>
       
-  	<div class="container">
+  	<div class="container up">
   		<div class="row">
 
-            <h1 >Adaugă un tip de alergie</h1>
+            <h1 class="center">Adaugă un tip de alergie</h1>
   				
   				
 				<form  role="form" method="post" action="">

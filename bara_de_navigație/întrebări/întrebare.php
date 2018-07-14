@@ -42,7 +42,7 @@
             <form class="bar" action="search.php" method="POST">
 <input type="text" name="search"  placeholder="cauta intrebarea" required
     size="30" minlength="4" >
-<button type="submit" name="submit-search"  class="button special" >Caută</button> 
+<button type="submit" name="submit-search"  class="button special upb" >Caută</button> 
 </form>
       <span class="validity"></span>
   </div>

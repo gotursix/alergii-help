@@ -107,7 +107,7 @@
 
     if (isset($_SESSION["email"]) || isset($_SESSION["loggedIn"])) 
           {
-           echo ' <div class="center">Puteți adauga o categorie apăsând pe butonul de mai jos <br>
+           echo ' <div class="center upb">Puteți adauga o categorie apăsând pe butonul de mai jos <br>
            <a href="../login/tda.php"> <button class="btn btn-info">Adaugă</button> </a>
            </div></div><br>';
 }

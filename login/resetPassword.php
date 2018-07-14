@@ -9,7 +9,7 @@
     
 <body>
        
-    <div class="container">
+    <div class="container up center">
         
     
      <img src="../images/avatar1.png">

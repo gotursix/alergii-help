@@ -4,8 +4,8 @@
 	<link rel="stylesheet" href="../css/css.css">
        <link rel="stylesheet" href="../css/style.css">
 </head>
-<body style="text-align:center;">
-   <div class="container" style="margin-top:10%;">
+<body>
+   <div class="container up center">
                <img src="../images/avatar1.png"><br><br>
               	
               	<form class="login" action="login.php" method="post"> 			 	                    			
@@ -22,7 +22,7 @@
  	            			
  	             
  	               <div data-validate="Enter password">
-					 <input placeholder="Introduceți parola" type="password"  name="password"  required/> 
+					 <input placeholder="Introduceți parola" type="password"  name="password"  required /> 
 	                     <span data-placeholder="Parola"></span>
 					</div>
 					
@@ -60,20 +60,7 @@
 			echo "<div class='alert'>
               <span class='closebtn'>&times;</span>  
               Numele sau parola este gresită!
-              </div>
-              
-              <script>
-var close = document.getElementsByClassName('closebtn');
-var i;
-
-for (i = 0; i < close.length; i++) {
-    close[i].onclick = function(){
-        var div = this.parentElement;
-        div.style.opacity = '0';
-        setTimeout(function(){ div.style.display = 'none'; }, 600);
-    }
-}
-</script>";
+              </div>";
 		}
 	}	
 ?>     

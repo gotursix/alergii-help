@@ -24,7 +24,7 @@
            include '../bara_de_navigație/bara_navigatie.php';
 ?>
     
-    <div class="container">
+    <div class="container up">
    <div class="row">
    
     <?php

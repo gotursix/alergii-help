@@ -12,8 +12,8 @@
    <img class="nav-img" src="https://alergii-help.xyz/images/default.jpg" alt="Default Profile Pic"> </li>
   </div>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <li><a href="https://alergii-help.xyz/panou_mod-account/profilul_meu.php" class="black" >Profilul meu</a></li>
-    <li><a href="https://alergii-help.xyz/login/logout.php" class="red" >Deconectați-vă</a></li>
+    <li><a href="https://alergii-help.xyz/panou_mod_account/profilul_meu.php" class="black">Profilul meu</a></li>
+    <li><a href="https://alergii-help.xyz/login/logout.php" class="red">Deconectați-vă</a></li>
       <li><a class="black"><span class="pointer" onclick="openNav()">&#9776; Setări</span>
 </a></li>
   </div>
@@ -26,7 +26,7 @@ else
    <img class="nav-img" src="https://alergii-help.xyz/images/'.$_SESSION["picture"].'" alt="Profile Pic"></li>
   </div>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <li><a href="https://alergii-help.xyz/panou_mod_account/profilul_meu.php" class="black" >Profilul meu</a></li>
+      <li><a href="https://alergii-help.xyz/panou_mod_account/profilul_meu.php" class="black">Profilul meu</a></li>
     <li><a href="https://alergii-help.xyz/login/logout.php" class="red">Deconectați-vă</a></li>
       <li><a class="black"><span class="pointer" onclick="openNav()">&#9776; Setări</span>
 </a></li>
