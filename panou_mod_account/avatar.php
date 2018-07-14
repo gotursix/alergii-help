@@ -32,7 +32,7 @@ session_start();
        
        
 
-  $file = "images/".$_SESSION["picture"];
+  $file = "../images/".$_SESSION["picture"];
     unlink($file);
            if(file_exists('images/default.jpg'))
                move_uploaded_file($_FILES['file']['tmp_name'],"images/".$_FILES['file']['name']);
