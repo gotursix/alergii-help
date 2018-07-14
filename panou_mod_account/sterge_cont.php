@@ -55,6 +55,10 @@ else{
        $sql3= "DELETE FROM users WHERE username = '$username' ";
     
     
+    
+     $file = "../images/".$_SESSION["picture"];
+    unlink($file);
+    
  
 
 if(mysqli_query($link3, $sql3))
