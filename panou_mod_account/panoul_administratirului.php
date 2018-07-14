@@ -21,8 +21,9 @@
                   	?>
                     <form action="" method="post" enctype="multipart/form-data">
                        
+                       <div class="image-file">
                         <input type="file" name="file" accept="image/*"/>
-                        
+                        </div>
                         <input value="Schimbați poza" type="submit" name="submit" />
                 
                     </form>
@@ -47,6 +48,11 @@
             
                     <form class="form-n" name="frmChange" role="form" method="POST" action="">
             
+                    <?php
+
+                        include 'nume_de_utilizator.php';
+      	?>
+      	
                 
                         <div  data-validate="Enter password" >
 					 
@@ -58,19 +64,25 @@
 
                         <button class="btn btn-info" type="submit" value="send">Confirmă schimbarea</button>
                 
-    <?php
 
-                        include 'nume de utilizator.php';
-      	?>
                 
  
                     </form>
+            
+            
+            
             
                 </li>
   
             </ul>
   
         </div>
+                
+                
+                
+                
+                
+                
                 
               
         <div class="dropdown">
@@ -85,30 +97,33 @@
                 <li> 
                   
                     <form class="form-p" name="frmChange" role="form" method="POST" action="">
-  
-    
+  <?php
+         include 'parola.php';
+         
+         ?>
                         <div data-validate="Enter password" >
 					 
-                            <input  placeholder="Parolă nouă" type="password"  name="newPassword"  required/> 
+                            <input  placeholder="Parolă nouă" type="password"  name="newPassword"  required> 
 	                     
                             <span  data-placeholder="Parola"></span>
 					
                         </div>
 	
 	  
+                       
+                       
+                       
+                       
                         <div  data-validate="Enter password" >
 					 
-                            <input  placeholder="Reintroduce-ți parola" type="password"  name="confirmPassword"  required/> 
+                            <input  placeholder="Reintroduce-ți parola" type="password"  name="confirmPassword"  required> 
 	                     
                             <span data-placeholder="Confirmati parola"></span>
 					
                         </div>
    
                         <button class="btn btn-info" type="submit" value="send" >Efectuați schimbarea parolei</button>
- <?php
 
-                        include 'parola.php';
-            	?>
                     </form>
             
                 </li>
@@ -117,6 +132,13 @@
   
         </div>
       
+          
+          
+          
+          
+          
+          
+          
           
         <div class="dropdown">
     

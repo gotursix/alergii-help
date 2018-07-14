@@ -38,7 +38,7 @@
       
     <h3>Cu ce ne ajută pagina?</h3>
     <p>Pagina este destinată persoanelor care vor sa se informeze despre anumite alergii şi nu numai.<br>
-      Cu un design interactiv, culori prietenoase, pagina abordează o temă serioasă, alergiile. Fiecare utilizator poate să ajute alte persoane să ajute alte persoane răspunzând la întrebările de pe forumul paginii. 
+      Cu un design interactiv, culori prietenoase, pagina abordează o temă serioasă, alergiile. Fiecare utilizator poate să ajute alte persoane răspunzând la întrebările de pe forumul paginii. 
     <hr>
     </p>
     <br>

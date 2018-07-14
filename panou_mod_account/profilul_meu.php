@@ -38,7 +38,7 @@
 	  
       echo "<h1 class='center'>Bine ai venit, $username</h1> ";
       
-   echo '<div class="post-st profil">';
+   echo '<div class="post-st profile-image">';
 
     if ($picture == "")
         echo '<img class="image-big" src="../images/default.jpg" alt="Default Profile Pic">';
@@ -51,8 +51,8 @@
         
         
         
-         <div class="post-dr sterge-left">
-        <h4> Doriți să ștergeți contul permanent? <br>  </h4>
+         <div class="post-dr">
+        <h4 class="upd"> Doriți să ștergeți contul permanent? <br>  </h4>
          
                  <div class="dropdown">
     

@@ -17,7 +17,7 @@
         
         echo'<a href="panoul_dezvoltatorilor/index.php" class="btn btn-info" role="button" > Panoul administratorului </a>';
     
-         echo'<a href="panoul_dezvoltatorilor/abonati.php" class="btn btn-info" role="button"> Abonații la newsletter </a>';
+         echo'<a href="panoul_dezvoltatorilor/abonati.php" class="btn btn-info upb" role="button"> Abonații la newsletter </a>';
         
         
         

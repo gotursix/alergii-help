@@ -58,8 +58,8 @@
 } else {
 			
 			echo "<div class='alert'>
-              <span class='closebtn'>&times;</span>  
-              Numele sau parola este gresită!
+             <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>
+            Numele sau parola este gresită!
               </div>";
 		}
 	}	

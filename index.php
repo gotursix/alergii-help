@@ -122,7 +122,7 @@
              <h3>".$row['c_title']."</h3>
             <p>".$row['c_home']."</p>
             <hr>
-                <div style='text-align: center;'>
+                <div class='center'>
       
 <a href='reportaje/stire.php?title=".$row['c_title']."&date=".$row['c_dat']."&hmm=".$row['c_id']."' class='btn btn-info' role='button'> Mai mult</a>   
             </div>
@@ -167,7 +167,7 @@
     
     if (isset($_SESSION["email"]) || isset($_SESSION["loggedIn"])) 
           {
-           echo ' <div align="center">Puteți adăuga un reportaj apăsând pe butonul de mai jos<br>
+           echo ' <div class="center">Puteți adăuga un reportaj apăsând pe butonul de mai jos<br>
            <a href="login/stire.php"> <button class="btn btn-info">Adaugă</button> </a>
            </div></div>';
 }

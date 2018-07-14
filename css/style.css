@@ -1,3 +1,23 @@
+.upd {
+    margin-top:5em;
+}
+
+.profile-image {
+    margin-left: 15em;
+}
+
+.image-file {
+    width: 80%;
+    margin-left: 2.5em;
+}
+
+.image-image {
+	width: 22em;
+margin-left: 10em;
+margin-right: 10em;
+
+	}
+
 #myUL {
 	padding-left: 0px;
 }
@@ -85,11 +105,6 @@ width:35px;
 height:35px;	
 }
 
-.nav-account {
-	font-size: 12pt; 
-	color:#d4d4d4;
-}
-
 .tipuri-def {
 	margin-left:15%;
 	margin-top: 30px;
@@ -137,20 +152,22 @@ height:35px;
 	text-align:center;
 }
 
-.sterge-left {
-	margin-top:11%; 
-	text-align:left;
-}
-
 .image-big {
-	max-height: 400px; 
-	max-width: 400px;
+    min-height: 20em;
+    min-width: 20em;
+	max-height: 40em; 
+	max-width: 40em;
 }
 
 .profil {
 	margin-top:3%; 
 	width:400px; 
 	margin-left: 18%;
+}
+
+.nav-account {
+	font-size: 12pt; 
+	color:#d4d4d4;
 }
 
 .abonare {
@@ -439,7 +456,7 @@ a {
 .closebtn:hover {
     color:white;
 }
-.post-st{width:120px; text-align:center; float:left; overflow:hidden;}
+.post-st{ text-align:center; float:left; overflow:hidden;}
 .post-st img{padding:10px; margin:3px 0 0 0; max-width:150px; max-height: 85px;}
 .post-dr{margin:0 0 0 70px;}
 .post-dr{margin:0 0 0 130px; color:#000000;}
