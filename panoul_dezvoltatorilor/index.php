@@ -29,15 +29,19 @@
     
     <div class="container">
         
-        
+                
+  <?php
+
+	$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+		
+		$email =   $_SESSION["email"];
+	
+		$data = $connection->query("DELETE FROM comments WHERE b_text  LIKE ' < ' ");
+
+  ?> 
         
         
         <br><br>
-        
-        
-        
-        
-        
         
         
 <?php
@@ -69,20 +73,6 @@ else
 
 ?>
 
-        
-        
-  <?php
-
-	$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
-		
-		$email =   $_SESSION["email"];
-	
-		$data = $connection->query("DELETE FROM comments WHERE b_text  LIKE ' < ' ");
-
-  ?>      
-        
-        
-        
 
 <br><br>
 
