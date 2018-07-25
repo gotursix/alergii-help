@@ -1,3 +1,6 @@
+ <head>
+ <link rel="icon" type="image/ico" href="https://alergii-help.xyz/images/avatar.png" />
+ </head>
  <nav class="navbar navbar-inverse">
   
         <div class="container-fluid"> 

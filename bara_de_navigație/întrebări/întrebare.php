@@ -52,8 +52,14 @@
             <div class="row">
               
                     <section>
-                       <?php
-                $aproved='1';        
+          
+          
+          
+          <?php
+      
+      
+      
+      $aproved='1';        
     $conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');     
      $sql = "SELECT * FROM article WHERE aproved = '$aproved'";
     $result = mysqli_query($conn, $sql);
@@ -72,7 +78,7 @@
          
           echo " <div class='box'>
           
-           <div class='post-st'>";
+           <div class='post-st-r post-st'>";
             
                 $row2 = $data->fetch_assoc();
                  $picture = $row2['image'];

@@ -30,7 +30,11 @@
     <?php
     
        require ("logincheck.php");
-		$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+	$server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $connection = mysqli_connect($server,$username, $password, $dbname);
 		
 		$email =  $_SESSION["email"];
 	  $username = $_SESSION["username"];
@@ -51,7 +55,7 @@
         
         
         
-         <div class="post-dr">
+        <div class="post-dr">
         <h4 class="upd"> Doriți să ștergeți contul permanent? <br>  </h4>
          
                  <div class="dropdown">
@@ -64,20 +68,25 @@
          
                 <div class="right-image">
                 <h4> Odată șters contu-ul aceasta nu mai poate fi recuperat!</h4>
+  
+      <?php 
+            include 'sterge_cont.php'; 
+            ?>
+            
    <form action="" method="POST" >
- 
+
   <input type="password" name="parola-stergere"  placeholder="Introduceți parola" required size="30" minlength="3" >
      
   <input class="sterge-cont" type="submit" value="Șterge cont-ul" name="stergere-cont" >
 </form>
 
-            <?php 
-            include 'sterge_cont.php'; 
-            ?>
+         
 
                 </div>
             </ul>
         </div>
+
+        
     
         
        </div>
@@ -87,7 +96,12 @@
               $aproved='1';    
               
               
-    $conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');     
+   $server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $conn = mysqli_connect($server,$username, $password, $dbname);   
+        
      $sql = "SELECT * FROM article WHERE aproved = '$aproved' AND a_author= '$username'";
     $result = mysqli_query($conn, $sql);
     $queryResults = mysqli_num_rows($result);
@@ -98,7 +112,11 @@
  while ($row = mysqli_fetch_assoc($result)) 
      {
      
-  $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
+  $server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $connection = mysqli_connect($server,$username, $password, $dbname);
     
     $data = $connection->query("SELECT image FROM users WHERE username = '$username' ");  
     $title = $row['a_title'];

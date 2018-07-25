@@ -31,6 +31,15 @@
 <?php
     
    require ("logincheck.php");
+   
+   
+
+$server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$password = "b567c63b567c63";
+$dbname = "u784726611_teze";
+$connection = mysqli_connect($server,$username, $password, $dbname);
+$conn= mysqli_connect($server,$username, $password, $dbname);
 
 		$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
 		
@@ -66,8 +75,7 @@ else
      <?php
 
             $abonat="1";
-          	$conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
-            
+
              $sql = "SELECT * FROM users WHERE abonat='$abonat'";
     $result = mysqli_query($conn, $sql);
     $queryResults = mysqli_num_rows($result);

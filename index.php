@@ -99,10 +99,19 @@
                           
                <?php
                            
-                              $aproved='1';        
-    $conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');     
-   
-     $sql = "SELECT * FROM news WHERE aproved = '$aproved'";
+    
+    
+  $server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$password = "b567c63b567c63";
+$dbname = "u784726611_teze";
+$conn = mysqli_connect($server,$username, $password, $dbname);
+ 
+        $aproved='1';  
+    $sql = "SELECT * FROM news WHERE aproved = $aproved  ";
+  
+       
+
     $result = mysqli_query($conn, $sql);
     $queryResults = mysqli_num_rows($result);
    
@@ -148,7 +157,7 @@
     
             <div class="col-lg-3 col-md-6 col-md-offset-3 col-lg-offset-0">
   
-                <iframe src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&nocurrent=0&noforecast=0&noforecast=1&days=4&tempunit=CELSIUS&windunit=METER_PER_SECOND&layout=image"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" style="width: 262px;height: 221px"></iframe>
+                <iframe src="https://www.meteoblue.com/en/weather/widget/three?geoloc=detect&nocurrent=0&noforecast=0&noforecast=1&days=4&tempunit=CELSIUS&windunit=METER_PER_SECOND&layout=image"  frameborder="0" scrolling="NO" allowtransparency="true" sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox" class="forecast"></iframe>
       
                         <br><br>
                         
@@ -172,10 +181,6 @@
            </div></div>';
 }
 
-
-
- mysqli_close($conn);
-  mysqli_close($connection);
     ?> 
     
     

@@ -25,21 +25,27 @@
 ?>
     
     <div class="container">    
+    
+    
         
 <?php
 
+$server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$password = "b567c63b567c63";
+$dbname = "u784726611_teze";
+$conn = mysqli_connect($server,$username, $password, $dbname);
+$dbcon= mysqli_connect($server,$username, $password, $dbname);
+$link= mysqli_connect($server,$username, $password, $dbname);
+$link2= mysqli_connect($server,$username, $password, $dbname);
 
-
-	$conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
-    $dbcon = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze') or die(mysqli_error($dbcon));
  
   $id = mysqli_real_escape_string($conn, $_GET['hmm']);  
  
 
       
    $aproved='1';
-    
-    $link = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+   
         $sql = "DELETE FROM comments WHERE b_idd='$id' ";
 
 if(mysqli_query($link, $sql))
@@ -50,7 +56,7 @@ if(mysqli_query($link, $sql))
 }
     
     
-       $link2 = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+    
         $sql2 = "DELETE FROM article WHERE a_id='$id' ";
 
 if(mysqli_query($link2, $sql2))

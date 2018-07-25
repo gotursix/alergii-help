@@ -30,15 +30,7 @@
     <div class="container">
         
                 
-  <?php
 
-	$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
-		
-		$email =   $_SESSION["email"];
-	
-		$data = $connection->query("DELETE FROM comments WHERE b_text  LIKE ' < ' ");
-
-  ?> 
         
         
         <br><br>
@@ -48,7 +40,15 @@
     
    require ("logincheck.php");
 
-		$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+$server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$password = "b567c63b567c63";
+$dbname = "u784726611_teze";
+$connection = mysqli_connect($server,$username, $password, $dbname);
+$conn = mysqli_connect($server,$username, $password, $dbname);
+
+
+		
 		
 		$email =  $_SESSION["email"];
 		$data = $connection->query("SELECT image FROM users WHERE email='$email'");
@@ -76,13 +76,13 @@ else
 
 <br><br>
 
-<h2 class="center">Intrebari ce necesita revizurire</h2>
+<h2 class="center">Întrebări ce necesită revizurire</h2>
 <br>
     
      <?php
 
             $aproved="";
-          	$conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
+          	
             
              $sql = "SELECT * FROM article WHERE aproved='$aproved'";
     $result = mysqli_query($conn, $sql);
@@ -94,8 +94,7 @@ else
  while ($row = mysqli_fetch_assoc($result)) 
      {
      
-  $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
-    
+
     $data = $connection->query("SELECT image FROM users WHERE username = '" . $row['a_author'] . "'");  
     $title = $row['a_title'];
          
@@ -118,11 +117,17 @@ else
   $deny='0';
   $part='1';
 
-
+       $new = htmlspecialchars($row['a_title']);
+       
+       
      echo " 
             <div class='post-dr'>
-             <h3>".$row['a_title']."</h3>
-            <p>".$row['a_author']."  ( ".$row['a_dat']." ) "."</p>
+            
+           
+             
+            <h3>$new</h3>
+             
+             <p>".$row['a_author']."  ( ".$row['a_dat']." ) "."</p>
           
         
    
@@ -162,7 +167,7 @@ else
    
     
     <br><br>
-    <h2 class="center">Comentarii ce necesita revizurire</h2>
+    <h2 class="center">Comentarii ce necesită revizurire</h2>
 
 <br>
 
@@ -183,7 +188,7 @@ else
    
  
             $aproved="";
-          	$conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
+           
             
              $sql = "SELECT * FROM comments WHERE aproved='$aproved'";
     $result = mysqli_query($conn, $sql);
@@ -199,7 +204,7 @@ else
          
       
  
-  $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
+
     
     $data = $connection->query("SELECT image FROM users WHERE username = '" . $row['b_username'] . "'");  
     $title = $row['b_text'];
@@ -223,9 +228,14 @@ else
   $deny='0';
   $part='2';
 
+$new = htmlspecialchars($row['b_text']);
+
+
      echo" 
             <div class='post-dr'>
-             <h3>".$row['b_text']."</h3>
+            
+            
+            <h3> $new</h3>
             <p>".$row['b_username']."  ( ".$row['b_dat']." ) "."</p>
              
           <a href='delete.php?title="."&aproved=".$app."&hmm=".$row['b_id']."&part=".$part."'>

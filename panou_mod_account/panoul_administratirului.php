@@ -157,7 +157,11 @@
  $email=$_SESSION["email"];
 
 
-		$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+		$server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $connection = mysqli_connect($server,$username, $password, $dbname);
 		
 		$email =   $_SESSION["email"];
 	
@@ -191,7 +195,11 @@ echo'<form action=" " method="POST">
 if(isset($_POST['submit-newsfeed']))
  {
 
-    $dbcon = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze') or die(mysqli_error($dbcon));
+   $server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $dbcon = mysqli_connect($server,$username, $password, $dbname);
 
       $abonat='1';
 
@@ -206,7 +214,11 @@ if(isset($_POST['submit-newsfeed']))
      if(isset($_POST['submit-newsfeed-2']))
  {
 
-    $dbcon = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze') or die(mysqli_error($dbcon));
+   $server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $dbcon = mysqli_connect($server,$username, $password, $dbname);
     
       $abonat='0';
 

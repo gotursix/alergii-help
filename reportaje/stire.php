@@ -44,8 +44,14 @@
    <br>
       
  <?php
-      
-     $conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');            
+     
+$server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$password = "b567c63b567c63";
+$dbname = "u784726611_teze";
+$conn = mysqli_connect($server,$username, $password, $dbname);
+$connection = mysqli_connect($server,$username, $password, $dbname);
+           
      $idd = mysqli_real_escape_string($conn, $_GET['hmm']);
 
  
@@ -53,7 +59,6 @@
      
     $aproved='1';      
     
-    $conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');     
    
      $sql = "SELECT * FROM news WHERE aproved = '$aproved' AND c_id = '$idd'";
     $result = mysqli_query($conn, $sql);
@@ -65,7 +70,7 @@
  while ($row = mysqli_fetch_assoc($result)) 
      {
      
-  $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
+ 
     
     
      echo " 
@@ -84,6 +89,10 @@
 
 
     }
+    
+    
+ $conn->close();
+  $connection->close();
     ?>
 
  

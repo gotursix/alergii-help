@@ -25,7 +25,7 @@ if ($username <> '')
    if (!$data->num_rows <> 0)
    {
  
-    echo"<h2 class='center'>Parolă corectă</h2>";
+    echo"<h2 align='center'>Parolă corectă</h2>";
     
        $link2 = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
        $sql2 = "DELETE FROM article WHERE a_author = '$username' ";
@@ -55,15 +55,11 @@ else{
        $sql3= "DELETE FROM users WHERE username = '$username' ";
     
     
-    
-     $file = "../images/".$_SESSION["picture"];
-    unlink($file);
-    
  
 
 if(mysqli_query($link3, $sql3))
 {
-    header('Location: ../login/logout.php');
+    header('Location: logout.php');
    
 } 
 else{
@@ -73,13 +69,13 @@ else{
    session_destroy();
     echo "<meta http-equiv='refresh' content='0'>";
       echo "<meta http-equiv='refresh' content='0'>";
-   header('Location: ../login/logout.php');
+   header('Location: logout.php');
    exit;
      echo "<meta http-equiv='refresh' content='0'>";
    }    
     else
 {
-  echo"<h2 class='center'>Parolă greșită</h2>";
+  echo"<h2 align='center'>Parolă greșită</h2>";
   mysqli_close($dbcon);
 }}}
 

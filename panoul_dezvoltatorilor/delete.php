@@ -32,7 +32,15 @@
 
       require ("logincheck.php");
     
-		$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+	
+$server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$password = "b567c63b567c63";
+$dbname = "u784726611_teze";
+$connection = mysqli_connect($server,$username, $password, $dbname);
+$conn = mysqli_connect($server,$username, $password, $dbname);
+$dbcon = mysqli_connect($server,$username, $password, $dbname);
+$link = mysqli_connect($server,$username, $password, $dbname);
 		
 		$email =  $_SESSION["email"];
 		$data = $connection->query("SELECT image FROM users WHERE email='$email'");
@@ -51,20 +59,18 @@
 
 
 
-	$conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+
    $aproved = mysqli_real_escape_string($conn, $_GET['aproved']);
     $id = mysqli_real_escape_string($conn, $_GET['hmm']);  
       $part = mysqli_real_escape_string($conn, $_GET['part']);  
 
-    
-    $dbcon = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze') or die(mysqli_error($dbcon));
- 
+
  
  if($part =='1')
  
   {  if($aproved == '0')
       
-    { $link = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+    { 
         $sql = "DELETE FROM article WHERE a_id='$id' ";
         
         
@@ -100,7 +106,7 @@ if(mysqli_query($link, $sql)){
 if($part =='2')
    {  if($aproved == '0')
       
-    { $link = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+    { 
         $sql = "DELETE FROM comments WHERE b_id='$id' ";
         
         

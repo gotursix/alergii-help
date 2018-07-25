@@ -1,5 +1,206 @@
+@media only screen and (max-width: 350px) {
+.forecast {
+    width:90%;
+    height:90%;
+}
+    
+}
+@media only screen and (min-width: 350px) {
+.forecast {
+    max-width: 265px;
+   height: 180px;
+}
+    
+}
+
+@media only screen and (max-width: 800px) {
+.container {
+    margin-left:1em;
+    margin-right:1em;
+}
+.col-xs-6 {
+    width:100%;
+}
+.caption {
+    font-size: 10pt;
+}
+h3 {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+}
+
+@media only screen and (max-width: 400px) {
+    .footer-img{
+        max-height: 30px;
+        max-width: 50px;
+    }
+    .footer{
+                font-size: 8pt;
+
+    }
+    
+}
+
+@media only screen and (min-width: 280px) and (min-height: 280px) {
+    
+.harta_iii {
+  max-width: 230px;max-height: 200px;  position: absolute; opacity: 0; margin-left:0; margin-top: 0%;
+}
+
+.harta_ii {
+   position: absolute; max-width: 230px; margin-left:0; max-height: 200px;margin-top: 0%;
+}
+
+.harta_i {
+   padding: 0px; max-width: 230px; margin-left:0;max-height: 200px;margin-top: 0%;
+}
+
+}
+@media only screen and (min-width: 300px) and (min-height: 300px) {
+    
+.harta_iii {
+  max-width: 280px;max-height: 250px;  position: absolute; opacity: 0; margin-left:0; margin-top: 0%;
+}
+
+.harta_ii {
+   position: absolute; max-width: 280px; margin-left:0; max-height: 250px;margin-top: 0%; margin-left:0;
+}
+
+.harta_i {
+   padding: 0px; max-width: 280px; left:0;max-height: 250px;margin-top: 0%;margin-left:0;
+}
+
+}
+
+
+@media only screen and (min-width: 400px) and (min-height: 500px) {
+    
+.harta_iii {
+  max-width: 330px;max-height: 300px;  position: absolute; opacity: 0; margin-left:0; margin-top: 0%;
+}
+
+.harta_ii {
+   position: absolute; max-width: 330px; left:0; max-height: 300px;margin-top: 0%;
+}
+
+.harta_i {
+   padding: 0px; max-width: 330px; left:0;max-height: 300px;margin-top: 0%;
+}
+
+}
+
+@media only screen and (min-width: 500px) and (min-height: 600px) {
+    
+.harta_iii {
+  max-width: 430px;max-height: 400px;  position: absolute; opacity: 0; margin-left:0; margin-top: 0%;
+}
+
+.harta_ii {
+   position: absolute; max-width: 430px; left:0; max-height: 400px;margin-top: 0%;
+}
+
+.harta_i {
+   padding: 0px; max-width: 430px; left:0;max-height: 400px;margin-top: 0%;
+}
+
+}
+
+@media only screen and (min-width: 600px) and (min-height: 700px) {
+    
+.harta_iii {
+  max-width: 530px;max-height: 500px;  position: absolute; opacity: 0; margin-left:0; margin-top: 1%;
+}
+
+.harta_ii {
+   position: absolute; max-width: 530px; left:0; max-height: 500px;margin-top: 1%;
+}
+
+.harta_i {
+   padding: 0px; max-width: 530px; left:0;max-height: 500px;margin-top: 1%;
+}
+
+}
+
+@media only screen and (max-width: 900px) {
+    .nav {
+        font-size: 10pt;
+    }
+    
+}
+
+@media only screen and (min-height: 480px) and (min-width: 450px){
+
+.harta_iii {
+  height: 404px; width: 570px; position: absolute; margin-left: 15%; opacity: 0;
+}
+
+.harta_ii {
+   position: absolute; height: 404px; width: 570px; margin-left: 15%; 
+}
+
+.harta_i {
+   padding: 0px; height: 404px; width: 570px;
+}
+}
+@media only screen and (min-height: 600px) and (min-width: 700px){
+
+.harta_iii {
+  height: 404px; width: 570px; position: absolute; margin-left: 25%; margin-top: 0%; opacity: 0;
+}
+
+.harta_ii {
+   position: absolute; height: 404px; width: 570px; margin-left: 25%; margin-top: 0%;
+}
+
+.harta_i {
+   padding: 0px; height: 404px; width: 570px;
+}
+    
+}
+@media only screen and (min-width: 650px) and (min-height: 650px) {
+
+.harta_iii {
+  height: 404px; width: 570px; position: absolute; margin-left: 30%; margin-top: 5%; opacity: 0;
+}
+
+.harta_ii {
+   position: absolute; height: 404px; width: 570px; margin-left: 30%; margin-top: 5%;
+}
+
+.harta_i {
+   padding: 0px; height: 404px; width: 570px;
+}
+
+}
+
+
+@media only screen and (min-width: 700px) and (min-height: 700px) {
+
+.harta_iii {
+  height: 404px; width: 570px; position: absolute; margin-left: 35%; margin-top: 5%; opacity: 0;
+}
+
+.harta_ii {
+   position: absolute; height: 404px; width: 570px; margin-left: 35%; margin-top: 5%;
+}
+
+.harta_i {
+   padding: 0px; height: 404px; width: 570px;
+}
+
+}
+@media only screen and (min-width: 1000px) {
 .upd {
     margin-top:5em;
+}
+}
+@media only screen and (max-width: 1000px) {
+.upd {
+    margin-top: 1em;
+}
+    
 }
 
 .profile-image {
@@ -103,10 +304,18 @@ textarea {
 width:35px; 
 height:35px;	
 }
+@media only screen and (max-width: 800px) {
+.tipuri-def {
+	margin-left:0px;
+	margin-top: 30px;
+}
+}
 
+@media only screen and (min-width: 800px) {
 .tipuri-def {
 	margin-left:15%;
 	margin-top: 30px;
+}
 }
 
 .tipuri {
@@ -144,20 +353,51 @@ height:35px;
 	 margin-left: 2%; 
 	 margin-right:2%;
 }
-
+@media only screen and (max-width: 650px) {
 .sterge-center {
-	margin-left:47%; 
+	margin-left:35%; 
+	width:35%; 
+	text-align:center;
+}
+.sterge-cont {
+    width:90%; 
+}
+}
+
+
+@media only screen and (max-width: 1000px) {
+.sterge-center {
+	margin-left:35%; 
+	width:30%; 
+	text-align:center;
+}
+.footer {
+    opacity: 0;
+}
+}
+
+@media only screen and (min-width: 1000px) {
+.sterge-center {
+	margin-left:51%; 
 	width:25%; 
 	text-align:center;
 }
-
+}
+@media only screen and (min-width: 1200px) {
+.sterge-center {
+	margin-left:41%; 
+	width:25%; 
+	text-align:center;
+}
+}
+@media only screen and (min-width: 1000px) {
 .image-big {
     min-height: 20em;
     min-width: 20em;
 	max-height: 40em; 
 	max-width: 40em;
 }
-
+}
 .profil {
 	margin-top:3%; 
 	width:400px; 
@@ -455,11 +695,38 @@ a {
 .closebtn:hover {
     color:white;
 }
+
+@media only screen and (max-width: 1000px) {
+    .post-dr {
+        margin-left: 0px;
+        text-align: center;
+    }
+    .post-st {
+        margin-left: 0px;
+         text-align: center;
+    }
+    .profile-image img{
+       margin-left:1em;
+       margin-right: 1em;
+       width:80%;
+    }
+    .post-st-r img{
+        margin-top:1em;
+        max-width: 150px;
+        max-height:150px;
+    }
+
+    
+}
+@media only screen and (min-width: 1000px) {
+    
 .post-st{ text-align:center; float:left; overflow:hidden;}
 .post-st img{padding:10px; margin:3px 0 0 0; max-width:150px; max-height: 85px;}
 .post-dr{margin:0 0 0 70px;}
 .post-dr{margin:0 0 0 130px; color:#000000;}
 
+    
+}
 .sidenav {
     height: 100%;
     width: 0;

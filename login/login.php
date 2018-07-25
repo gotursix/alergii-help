@@ -33,7 +33,16 @@
 	session_start();
 
 	if (isset($_POST["logIn"])) {
-		$connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
+		
+		
+		
+$server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$password = "b567c63b567c63";
+$dbname = "u784726611_teze";
+$connection= mysqli_connect($server,$username, $password, $dbname);
+
+
 		
 		$email = $connection->real_escape_string($_POST["email"]);
 		$password = sha1($connection->real_escape_string($_POST["password"]));
