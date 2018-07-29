@@ -32,6 +32,18 @@
                 
                 <?php 
                  include '../../login/dbh.php';
+                          
+
+$server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$password = "b567c63b567c63";
+$dbname = "u784726611_teze";
+$conn = mysqli_connect($server,$username, $password, $dbname);
+$connection = mysqli_connect($server,$username, $password, $dbname);
+
+                          
+                          
+                          
                             
 
     $title = mysqli_real_escape_string($conn, $_GET['title']);
@@ -43,8 +55,7 @@
     $queryResults = mysqli_num_rows($result);
     $row = mysqli_fetch_assoc($result);
                 
-    $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
-    
+
     $data = $connection->query("SELECT image FROM users WHERE username = '" . $row['a_author'] . "'");
                             
                 echo "
@@ -67,11 +78,11 @@
        <?php
                  include '../../login/dbh.php';
                             
-    $title = mysqli_real_escape_string($conn, $_GET['title']);
+    $title = mysqli_real_escape_string($conn, $_GET['new']);
     $date = mysqli_real_escape_string($conn, $_GET['date']);
 
 
-    $sql = "SELECT * FROM article WHERE a_title='$title' AND a_dat='$date'";
+    $sql = "SELECT * FROM article WHERE  a_dat='$date'";
     $result = mysqli_query($conn, $sql);
     $queryResults = mysqli_num_rows($result);
 
@@ -91,8 +102,7 @@
       while($row =mysqli_fetch_assoc($result))
       { 
          
-         $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
-    
+
     $data = $connection->query("SELECT image FROM users WHERE username = '" . $row['b_username'] . "'");  
     $title = $row['a_title'];
          
@@ -108,10 +118,10 @@
     else
         echo '<img  src="../../images/' . $picture . '" alt="Profile Pic"></div>';
       
-          
+           $new = htmlspecialchars($row['b_text']);
           echo" 
           <div class='post-dr' >
-         <p>".$row['b_text']."</p>
+         <p>$new</p>
     Adugat de ".$row['b_username']."
          (  ".$row['b_dat']." )
          <p><br></p>
@@ -158,7 +168,6 @@ echo'<h4>Pentru a adăuga un comentariu trebuie să vă conectați</h4>';
     if (isset($_POST["comentariu"]))
     {
    
-   $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
  		$username=  $_SESSION["username"] ;
 		$comentariu = $connection->real_escape_string($_POST["textul"]);  
 
@@ -171,7 +180,11 @@ echo'<h4>Pentru a adăuga un comentariu trebuie să vă conectați</h4>';
 		
     	if ($data === false)
         	echo "<div class=\"alert\">
- <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>                  Eroare!            </div>";
+ <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>      
+ 
+  Va rugam schimbati-va numele si nu mai folositi script-uri / php code in nume .     
+ 
+ </div>";
     	else
     	{	echo "<div class=\"alert\">
 <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>             Comentariul va fi verificat de un administrator înainte de a fi publicat.

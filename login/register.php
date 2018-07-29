@@ -88,11 +88,14 @@ $connection= mysqli_connect($server,$username, $password, $dbname);
 
        move_uploaded_file($_FILES['file']['tmp_name'],"../images/".$_FILES['file']['name']);
        
-         $connection = mysqli_connect('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
-         $q = mysqli_query($connection,"UPDATE users SET image = '".$_FILES['file']['name']."' WHERE username LIKE '%$firstName%' ");
-    	
-    		header("Location: login.php");
-			exit();}	
+         $q = mysqli_query($connection,"UPDATE users SET image = '".$_FILES['file']['name']."' WHERE username LIKE '%$firstName%' ");#
+         
+         
+         	echo "<div class='alert'>
+             <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>
+               Cont creeat cu succes. 
+              </div>";
+    	}	
         
         else {
             
@@ -113,6 +116,7 @@ $connection= mysqli_connect($server,$username, $password, $dbname);
              <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>
                Există deja un cont creat cu această adresă de e-mail.
               </div>";
+              
          }
          
          

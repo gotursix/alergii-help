@@ -101,12 +101,13 @@
                            
     
     
-  $server = "mysql.hostinger.com";
+$server = "mysql.hostinger.com";
 $username = "u784726611_teze";
 $password = "b567c63b567c63";
 $dbname = "u784726611_teze";
 $conn = mysqli_connect($server,$username, $password, $dbname);
- 
+$connection = mysqli_connect($server,$username, $password, $dbname);
+
         $aproved='1';  
     $sql = "SELECT * FROM news WHERE aproved = $aproved  ";
   
@@ -121,7 +122,6 @@ $conn = mysqli_connect($server,$username, $password, $dbname);
  while ($row = mysqli_fetch_assoc($result)) 
      {
      
-  $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
     
     
      echo "  <div class='col-lg-4 col-md-4 col-sm-6 col-xs-6'>

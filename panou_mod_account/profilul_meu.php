@@ -30,11 +30,16 @@
     <?php
     
        require ("logincheck.php");
-	$server = "mysql.hostinger.com";
+       
+     $server = "mysql.hostinger.com";
         $username = "u784726611_teze";
         $password = "b567c63b567c63";
         $dbname = "u784726611_teze";
-        $connection = mysqli_connect($server,$username, $password, $dbname);
+        $connection = mysqli_connect($server,$username, $password, $dbname);  
+        $conn = mysqli_connect($server,$username, $password, $dbname);
+       
+       
+	
 		
 		$email =  $_SESSION["email"];
 	  $username = $_SESSION["username"];
@@ -55,12 +60,10 @@
         
         
         
-        <div class="post-dr">
-        <h4 class="upd"> Doriți să ștergeți contul permanent? <br>  </h4>
+         <div class="post-dr" >
+       <h4 class="upd"> Doriți să ștergeți contul permanent? <br>  </h4>
          
-                 <div class="dropdown">
-    
-            <button class="button special btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Șterge-ți contul
+           <button class="button special btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Șterge-ți contul
     
                 <span class="caret"></span>
             </button>
@@ -68,40 +71,30 @@
          
                 <div class="right-image">
                 <h4> Odată șters contu-ul aceasta nu mai poate fi recuperat!</h4>
-  
-      <?php 
-            include 'sterge_cont.php'; 
-            ?>
-            
    <form action="" method="POST" >
-
+ 
   <input type="password" name="parola-stergere"  placeholder="Introduceți parola" required size="30" minlength="3" >
      
   <input class="sterge-cont" type="submit" value="Șterge cont-ul" name="stergere-cont" >
 </form>
 
-         
+            <?php 
+            include 'sterge_cont.php'; 
+            ?>
 
                 </div>
             </ul>
         </div>
-
-        
     
         
        </div>
-      </div>     
+          
+      
 <?php
             
               $aproved='1';    
               
               
-   $server = "mysql.hostinger.com";
-        $username = "u784726611_teze";
-        $password = "b567c63b567c63";
-        $dbname = "u784726611_teze";
-        $conn = mysqli_connect($server,$username, $password, $dbname);   
-        
      $sql = "SELECT * FROM article WHERE aproved = '$aproved' AND a_author= '$username'";
     $result = mysqli_query($conn, $sql);
     $queryResults = mysqli_num_rows($result);
@@ -112,18 +105,16 @@
  while ($row = mysqli_fetch_assoc($result)) 
      {
      
-  $server = "mysql.hostinger.com";
-        $username = "u784726611_teze";
-        $password = "b567c63b567c63";
-        $dbname = "u784726611_teze";
-        $connection = mysqli_connect($server,$username, $password, $dbname);
-    
+
     $data = $connection->query("SELECT image FROM users WHERE username = '$username' ");  
+    
+    $new = htmlspecialchars($row['a_title']);
+    
     $title = $row['a_title'];
          
           echo " <div class='box'>
           
-           <div class='post-st'>";
+           <div class='post-st post-st-r'>";
             
                 $row2 = $data->fetch_assoc();
                  $picture = $row2['image'];
@@ -135,9 +126,12 @@
 
 
        $part='2';
-     echo " <a href='../bara_de_navigație/întrebări/article.php?title=".$row['a_title']."&date=".$row['a_dat']."&hmm=".$row['a_id']."'>
+       
+       
+       
+     echo " <a href='../bara de navigație/întrebări/article.php?title=".$new."&date=".$row['a_dat']."&hmm=".$row['a_id']."'>
             <div class='post-dr'>
-             <h3>".$row['a_title']."</h3>
+             <h3>$new</h3>
             <p>".$row['a_author']."</p>
              </a>
              
@@ -146,7 +140,7 @@
            <a href='delete.php?title="."&hmm=".$row['a_id']."'>
            
        
-          <img class='dlike' src='../images/Dislike.png' alt='Default Profile Pic'>
+            <img class='dlike' src='../images/Dislike.png' alt='Default Profile Pic'>
           </a>
             
                
@@ -160,7 +154,7 @@
 
 ";   }}
  ?>
- 
+ </div> 
     </div>
 <script src="../js/jq.js"></script> 
 <script src="../js/js.js"></script>

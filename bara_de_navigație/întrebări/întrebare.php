@@ -59,8 +59,15 @@
       
       
       
-      $aproved='1';        
-    $conn = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');     
+      $aproved='1';     
+      $server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $connection = mysqli_connect($server,$username, $password, $dbname);
+        $conn = mysqli_connect($server,$username, $password, $dbname);
+      
+      
      $sql = "SELECT * FROM article WHERE aproved = '$aproved'";
     $result = mysqli_query($conn, $sql);
     $queryResults = mysqli_num_rows($result);
@@ -71,10 +78,13 @@
  while ($row = mysqli_fetch_assoc($result)) 
      {
      
-  $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');  
-    
+
     $data = $connection->query("SELECT image FROM users WHERE username = '" . $row['a_author'] . "' ");  
     $title = $row['a_title'];
+    
+    
+           $new = htmlspecialchars($row['a_title']);
+
          
           echo " <div class='box'>
           
@@ -88,9 +98,9 @@
     else
         echo '<img  src="../../images/' . $picture . '" alt="Profile Pic"></div>';
 
-     echo " <a href='article.php?title=".$row['a_title']."&date=".$row['a_dat']."&hmm=".$row['a_id']."'>
+     echo " <a href='article.php?title=".$new."&date=".$row['a_dat']."&hmm=".$row['a_id']."'>
             <div class='post-dr'>
-             <h3>".$row['a_title']."</h3>
+             <h3>$new</h3>
             <p>".$row['a_author']."</p>
             </div>
               </div>
@@ -132,7 +142,6 @@ echo'<h4 class="center">Pentru a adăuga o întrebare trebuie să vă conectați
     if (isset($_POST["comentariu"]))
     {
    
-   $connection = new mysqli('mysql.hostinger.com', 'u784726611_teze', 'b567c63b567c63', 'u784726611_teze');
  		$username=  $_SESSION["username"] ;
 		$comentariu = $connection->real_escape_string($_POST["textul"]);          
         
@@ -145,7 +154,7 @@ echo'<h4 class="center">Pentru a adăuga o întrebare trebuie să vă conectați
     	if ($data === false)
         	echo "<div class='alert'>
              <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>
-                 Eroare!
+                 Va rugam schimbati-va numele si nu mai folositi script-uri / php code in nume .
               </div>";
     	else
     	{	echo "<div class='alert'>

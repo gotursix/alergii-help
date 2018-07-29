@@ -58,7 +58,7 @@ $connection= mysqli_connect($server,$username, $password, $dbname);
 
     $data = $connection->query("SELECT username FROM users WHERE email='$email' AND password='$password'");
     $row = $data->fetch_assoc();
-    $_SESSION["username"]=$row['username'];
+    $_SESSION["username"] = htmlspecialchars($row['username']);
     
  	header("Location: ../index.php");
 
