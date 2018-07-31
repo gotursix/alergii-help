@@ -62,30 +62,89 @@
         
          <div class="post-dr" >
        <h4 class="upd"> Doriți să ștergeți contul permanent? <br>  </h4>
-         
-           <button class="button special btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Șterge-ți contul
-    
-                <span class="caret"></span>
-            </button>
-            <ul  class="dropdown-menu sterge-center" aria-labelledby="dropdownMenuButton">
-         
-                <div class="right-image">
-                <h4> Odată șters contu-ul aceasta nu mai poate fi recuperat!</h4>
-   <form action="" method="POST" >
+
+            <a class="btn btn-secondary" type="button">
+            <?php    
+
+
+ $email=$_SESSION["email"];
+
+
+		$server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $connection = mysqli_connect($server,$username, $password, $dbname);
+		
+		$email =   $_SESSION["email"];
+	
+		$data = $connection->query("SELECT stergere FROM users WHERE email='$email'");
+
+   if ($data->num_rows > 0)
+   {
  
-  <input type="password" name="parola-stergere"  placeholder="Introduceți parola" required size="30" minlength="3" >
-     
-  <input class="sterge-cont" type="submit" value="Șterge cont-ul" name="stergere-cont" >
-</form>
+    $row = $data->fetch_assoc();
+    $_SESSION["stergere"]=$row['stergere'];
 
-            <?php 
-            include 'sterge_cont.php'; 
-            ?>
+} 
 
-                </div>
-            </ul>
-        </div>
+if($_SESSION["stergere"] <> '1')
+echo'<form action=" " method="POST">
+  <input type="submit" value="Sterge contul" name="submit-newsfeed">
+</form>';
+
+else 
+echo'<form action=" " method="POST">
+  <input type="submit" value="Anuleaza stergerea contului" name="submit-newsfeed-2">
+</form>';
+
+
+if(isset($_POST['submit-newsfeed']))
+ {
+
+   $server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $dbcon = mysqli_connect($server,$username, $password, $dbname);
+
+      $stergere='1';
+
+     if (mysqli_query($dbcon, "UPDATE users SET stergere='$stergere' WHERE email='$email'"))
+    {  }
+         else 
+          echo"Eroare!";
+    echo "<meta http-equiv='refresh' content='0'>";
+     }
+  
+  
+     if(isset($_POST['submit-newsfeed-2']))
+ {
+
+   $server = "mysql.hostinger.com";
+        $username = "u784726611_teze";
+        $password = "b567c63b567c63";
+        $dbname = "u784726611_teze";
+        $dbcon = mysqli_connect($server,$username, $password, $dbname);
     
+      $stergeree='0';
+
+     if (mysqli_query($dbcon, "UPDATE users SET stergere='$stergeree' WHERE email='$email'"))
+       	{  }
+         else 
+          echo"Eroare!";
+  
+     }
+
+
+
+
+ ?>
+            </a>
+  
+            </ul>
+  
+        </div>
         
        </div>
           

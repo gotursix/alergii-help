@@ -24,7 +24,7 @@
            include '../bara_de_navigație/bara_navigatie.php';
 ?>
     
-    <div class="container">    
+    <div class="container up">    
     
     
         
@@ -70,8 +70,9 @@ if(mysqli_query($link2, $sql2))
 ?>
  
 <br><br>
+<div class="center">
 <a href="profilul_meu.php" class="btn btn-info" role="button">Înapoi la profil</a>
-
+</div>
 
  </div>
 

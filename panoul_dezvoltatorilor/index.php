@@ -101,7 +101,7 @@ else
           echo " <div class='box'>
           
            
-           <div class='post-st'>";
+           <div class='post-st post-st-r'>";
             
                 $row2 = $data->fetch_assoc();
                  $picture = $row2['image'];

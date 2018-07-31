@@ -41,11 +41,45 @@
             
  <?php                     
    
+function letters( $string ) {
+    return preg_match( '/[a-zA-Z]/', $string );
+}
+
+function numbers( $string ) {
+    return preg_match( '/\d/', $string );
+}
+
+
    
    
    
-    if (isset($_POST["register"]))
    
+   
+   
+   
+   
+if (isset($_POST["register"]))
+{
+    
+    $server = "mysql.hostinger.com";
+$username = "u784726611_teze";
+$pass= "b567c63b567c63";
+$dbname = "u784726611_teze";
+$connection= mysqli_connect($server,$username, $pass, $dbname);
+
+    
+    
+    
+        $firstName = $connection->real_escape_string($_POST["firstName"]);  		
+		$email = $connection->real_escape_string($_POST["email"]);  
+		$password = $connection->real_escape_string($_POST["password"]); 
+    
+    
+    
+
+
+
+   if (letters($password)==true && numbers($password)==true)
    { 
        
        	
@@ -58,21 +92,8 @@
     if (in_array($_FILES['file']['type'], $types)) 
     {
         
-        
-                       
-$server = "mysql.hostinger.com";
-$username = "u784726611_teze";
-$password = "b567c63b567c63";
-$dbname = "u784726611_teze";
-$connection= mysqli_connect($server,$username, $password, $dbname);
+ $password=sha1($password);
 
-    
-    
-    
-        $firstName = $connection->real_escape_string($_POST["firstName"]);  		
-		$email = $connection->real_escape_string($_POST["email"]);  
-		$password = sha1($connection->real_escape_string($_POST["password"])); 
-	
 		$data = $connection->query("INSERT INTO users (username, email, password) VALUES ('$firstName', '$email', '$password')");
 		
 		
@@ -88,16 +109,15 @@ $connection= mysqli_connect($server,$username, $password, $dbname);
 
        move_uploaded_file($_FILES['file']['tmp_name'],"../images/".$_FILES['file']['name']);
        
-         $q = mysqli_query($connection,"UPDATE users SET image = '".$_FILES['file']['name']."' WHERE username LIKE '%$firstName%' ");#
+         $q = mysqli_query($connection,"UPDATE users SET image = '".$_FILES['file']['name']."' WHERE username LIKE '%$firstName%' ");
          
-         
-         	echo "<div class='alert'>
-             <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>
-               Cont creeat cu succes. 
-              </div>";
+           header('Location: logout.php');
     	}	
         
         else {
+            
+            
+        
             
             
              if (empty($_FILES['file']['name'])) 
@@ -117,6 +137,12 @@ $connection= mysqli_connect($server,$username, $password, $dbname);
                Există deja un cont creat cu această adresă de e-mail.
               </div>";
               
+              else 
+              
+              
+           header('Location: logout.php');
+              
+              
          }
          
          
@@ -127,13 +153,28 @@ $connection= mysqli_connect($server,$username, $password, $dbname);
                Fisierul nu este o imagine
               </div> ";
       
-    }
- 	  }    
- 	 
- 	 
- 	 
- 	 
- 	  
+   
+        }
+   }
+        
+        
+        
+        
+        
+        
+        
+         
+       else 
+       	echo "<div class='alert'>
+             <span class=\"closebtn\" onclick=\"this.parentElement.style.display='none';\">×</span>
+               Parola trebuie sa contina cel putin o cifra si o litera mare!
+              </div> ";
+        
+        
+    } 
+       
+      
+       
    
    
 ?> 

@@ -140,8 +140,9 @@ else
 ?>
 
 <br><br>
+<div class="center">
 <a href="index.php" class="btn btn-info" role="button"> Înapoi la panou </a>
-
+</div>
 
  </div>
 
